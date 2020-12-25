@@ -3,7 +3,7 @@ provider "azurerm" {
   version = "~> 2.0"
 }
 
-terraform {
+/* terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -11,7 +11,7 @@ terraform {
     }
   }
   
-}
+} */
 variable "rg2" {
   default     = "TerraformRG"
   type        = string
