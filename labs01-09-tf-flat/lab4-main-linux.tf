@@ -9,7 +9,7 @@ resource "azurerm_linux_virtual_machine" "vmlinux" {
   location              = var.location
   resource_group_name   = var.rg2
   network_interface_ids = [azurerm_network_interface.linux_nic.id]
-  computer_name         = "${var.linux_name}"
+  computer_name         = var.linux_name
   size                  = var.vm_size
   admin_username        = var.linux_admin_user
   tags                  = local.common_tags
