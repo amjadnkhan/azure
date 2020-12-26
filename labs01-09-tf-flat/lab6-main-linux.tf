@@ -2,6 +2,10 @@ resource "azurerm_availability_set" "avset" {
   name                = var.avs
   location            = var.location
   resource_group_name = var.rg2
+depends_on = [
+        azurerm_resource_group.rg2
+]
+
 }
 
 resource "azurerm_linux_virtual_machine" "vmlinux" {
@@ -10,7 +14,7 @@ resource "azurerm_linux_virtual_machine" "vmlinux" {
   resource_group_name   = var.rg2
   network_interface_ids = [azurerm_network_interface.linux_nic.id]
   availability_set_id   = azurerm_availability_set.avset.id
-  computer_name         = "${var.linux_name}"
+  computer_name         = var.linux_name
   size                  = var.vm_size
   admin_username        = var.linux_admin_user
   tags                  = local.common_tags

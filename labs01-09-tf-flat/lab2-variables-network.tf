@@ -1,17 +1,16 @@
 provider "azurerm" {
   features {}
-  version = "~> 2.0"
 }
 
-/* terraform {
+terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      
+      version = "~> 2.40.0"
     }
   }
-  
-} */
+  required_version = "~> 0.13"
+}
 variable "rg2" {
   default     = "TerraformRG"
   type        = string
