@@ -2,6 +2,9 @@ resource "azurerm_availability_set" "avset" {
   name                = var.avs
   location            = var.location
   resource_group_name = var.rg2
+depends_on = [
+	azurerm_resource_group.rg2
+]
 }
 
 resource "azurerm_linux_virtual_machine" "vmlinux" {

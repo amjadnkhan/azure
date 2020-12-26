@@ -2,10 +2,9 @@
 
 provider "azurerm" {
   features {}
-  version = "~> 2.40.0"
 }
 
-/*terraform {
+terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -13,7 +12,7 @@ provider "azurerm" {
     }
   }
   required_version = "~> 0.13"
-} */
+}
 
 resource "azurerm_resource_group" "rg1" {
   name     = "Lab01"
